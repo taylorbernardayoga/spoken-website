@@ -156,6 +156,7 @@ details p{padding:0 28px 24px;color:var(--moss);font-weight:500}
 .field{display:flex;flex-direction:column;gap:6px}
 .field label{font-size:15px;font-weight:700}
 .field input{height:56px;border-radius:999px;border:2px solid var(--forest);background:var(--white);padding:0 22px;font-size:16px;font-family:var(--display);color:var(--forest)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .err{color:var(--rust);font-size:14px;font-weight:700;min-height:1em}
 .note{font-size:15px;color:var(--moss);text-align:center;font-weight:500}
 .done h3{font-size:28px}
@@ -342,9 +343,10 @@ html{scroll-behavior:smooth}
         <p class="meta">Free live masterclass · Monday, November 2 · 5:30pm PT / 8:30pm ET · On Zoom</p>
       </div>
       <div class="form-card">
-        <form id="signup" data-kit-form-id="" novalidate style="display:flex;flex-direction:column;gap:16px">
+        <form id="signup" data-kit-form-id="10070979" novalidate style="display:flex;flex-direction:column;gap:16px">
           <h3>Save your free seat</h3>
           <div class="field"><label for="mc-name">First name</label><input id="mc-name" name="first_name" type="text" autocomplete="given-name" placeholder="Your first name"></div>
+          <div class="hp" aria-hidden="true"><label for="mc-website">Leave this empty</label><input id="mc-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
           <div class="field"><label for="mc-email">Email</label><input id="mc-email" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
           <div class="err" id="mc-err" role="alert"></div>
           <button class="btn" type="submit">I'm in</button>
@@ -431,15 +433,21 @@ document.getElementById('signup').addEventListener('submit', function (e) {
   var form = this, btn = form.querySelector('button');
   var showDone = function () { form.hidden = true; document.getElementById('done').hidden = false; };
   var kitId = form.dataset.kitFormId;
-  if (!kitId) { showDone(); return; }
+  // Bots fill the hidden field; pretend it worked and send nothing.
+  if (!kitId || document.getElementById('mc-website').value) { showDone(); return; }
   var body = new FormData();
   body.append('email_address', email);
   body.append('fields[first_name]', name);
   btn.disabled = true; btn.textContent = 'Saving your seat...';
   fetch('https://app.kit.com/forms/' + kitId + '/subscriptions', { method: 'POST', body: body, headers: { Accept: 'application/json' } })
-    .then(function (r) { if (!r.ok) throw new Error(r.status); showDone(); })
-    .catch(function () {
-      err.textContent = 'Something went wrong. Try again in a sec.';
+    // Kit answers 200 even when it rejects a signup, so check the status it reports.
+    .then(function (r) { return r.json(); })
+    .then(function (res) {
+      if (res.status !== 'success') throw new Error((res.errors && res.errors.messages || []).join(' '));
+      showDone();
+    })
+    .catch(function (e) {
+      err.textContent = /email/i.test(e.message) ? 'That email didn\'t go through. Double check it?' : 'Something went wrong. Try again in a sec.';
       btn.disabled = false; btn.textContent = "I'm in";
     });
 });
