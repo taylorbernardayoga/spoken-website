@@ -439,14 +439,19 @@ document.getElementById('signup').addEventListener('submit', function (e) {
   body.append('email_address', email);
   body.append('fields[first_name]', name);
   btn.disabled = true; btn.textContent = 'Saving your seat...';
-  fetch('https://app.kit.com/forms/' + kitId + '/subscriptions', { method: 'POST', body: body, headers: { Accept: 'application/json' } })
+  // Give up after 15s so a dropped connection doesn't leave the button spinning forever.
+  var ctrl = window.AbortController ? new AbortController() : null;
+  var timer = ctrl && setTimeout(function () { ctrl.abort(); }, 15000);
+  fetch('https://app.kit.com/forms/' + kitId + '/subscriptions', { method: 'POST', body: body, headers: { Accept: 'application/json' }, signal: ctrl ? ctrl.signal : undefined })
     // Kit answers 200 even when it rejects a signup, so check the status it reports.
     .then(function (r) { return r.json(); })
     .then(function (res) {
+      clearTimeout(timer);
       if (res.status !== 'success') throw new Error((res.errors && res.errors.messages || []).join(' '));
       showDone();
     })
     .catch(function (e) {
+      clearTimeout(timer);
       err.textContent = /email/i.test(e.message) ? 'That email didn\'t go through. Double check it?' : 'Something went wrong. Try again in a sec.';
       btn.disabled = false; btn.textContent = "I'm in";
     });
