@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Masterclass: How to Say What You Actually Need Without Starting a Fight</title>
+<meta name="description" content="A free live masterclass with Taylor Bernarda on moving through a trigger in real time and saying what you need without starting a fight. Monday, November 2 at 5:30pm PT.">
+<meta property="og:title" content="How to Say What You Actually Need Without Starting a Fight">
+<meta property="og:description" content="Free live masterclass with Taylor Bernarda. Monday, November 2 at 5:30pm PT.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://taylorbernarda.com/masterclass/taylor-beach.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1F3A2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@600;700&display=swap">
+<style>
+/* Layout: sand page with forest-green bands; one column on phones, two on desktop. Single committed look. */
+:root{
+  --sand:#F4E6D2; --blush:#FBEFE6; --forest:#1F3A2B; --moss:#3E5547; --sun:#F2A93B; --rust:#B33A0B; --cream:#F4E6D2; --mist:#D6CDBE; --white:#FFFFFF;
+  --display:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --hand:"Caveat", "Segoe Script", cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--sand);color:var(--forest);font-family:var(--display);font-size:18px;line-height:1.55;margin:0}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance;letter-spacing:-0.02em;line-height:1.02;font-weight:800}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.band{padding-block:clamp(56px,9vw,110px)}
+.dark{background:var(--forest);color:var(--cream)}
+.blush{background:var(--blush)}
+.hand{font-family:var(--hand);font-size:clamp(26px,3.2vw,34px);line-height:1.1;color:var(--rust);font-weight:700}
+.dark .hand{color:var(--sun)}
+.lead{color:var(--moss);font-weight:500;font-size:clamp(18px,1.8vw,21px);max-width:62ch}
+.dark .lead{color:var(--mist)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 32px;border-radius:999px;background:var(--rust);color:var(--white);font-weight:700;font-size:18px;text-decoration:none;border:none;font-family:var(--display);cursor:pointer}
+.btn:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.btn.dark-btn{background:var(--forest);color:var(--cream)}
+h2{font-size:clamp(36px,5vw,58px)}
+
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
+.brand{font-weight:800;font-size:clamp(22px,2.4vw,28px);text-decoration:none}
+nav .btn{min-height:46px;padding:0 22px;font-size:16px;background:var(--forest);color:var(--cream)}
+
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,430px);gap:clamp(32px,5vw,64px);align-items:center;padding-block:10px 80px}
+.hero-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero h1{font-size:clamp(44px,7vw,88px);letter-spacing:-0.035em}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.when{font-weight:700;font-size:17px}
+.photo{position:relative;width:min(430px,100%);justify-self:center}
+.photo::before{content:"";position:absolute;right:-30px;top:-30px;width:62%;aspect-ratio:1;border-radius:50%;background:var(--sun)}
+.photo img{position:relative;display:block;width:100%;height:auto;aspect-ratio:430/560;object-fit:cover;object-position:50% 0;border-radius:999px 999px 28px 28px}
+
+.video-band{display:flex;flex-direction:column;align-items:center;gap:18px;padding-block:0 100px}
+.player{position:relative;width:min(380px,100%);border-radius:28px;overflow:hidden;background:var(--forest)}
+.player video{position:relative;z-index:1;display:block;width:100%;aspect-ratio:9/16;background:var(--forest)}
+.player-bg,.player-fs{display:none}
+/* Laptops: wide frame, portrait video centered over a blurred stretch of itself. Phones keep the plain portrait player. */
+@media (min-width:861px) and (hover:hover){
+  .player{width:min(1000px,100%);aspect-ratio:16/9}
+  .player video{width:auto;height:100%;margin:0 auto;background:transparent}
+  .player-bg{display:block;position:absolute;left:-8%;top:-8%;width:116%;height:116%;filter:blur(28px) brightness(.7)}
+  .player-fs{display:flex;position:absolute;z-index:2;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:none;align-items:center;justify-content:center;background:rgba(31,58,43,.65);color:var(--cream);cursor:pointer}
+  .player-fs:hover{background:var(--forest)}
+}
+/* Full screen always uses the wide layout, whatever the window width. */
+.player:fullscreen{width:100%;height:100%;aspect-ratio:auto;border-radius:0}
+.player:fullscreen video{width:auto;height:100%;margin:0 auto;background:transparent}
+.player:fullscreen .player-bg{display:block;position:absolute;left:-8%;top:-8%;width:116%;height:116%;filter:blur(28px) brightness(.7)}
+.player:-webkit-full-screen{width:100%;height:100%;aspect-ratio:auto;border-radius:0}
+.player:-webkit-full-screen video{width:auto;height:100%;margin:0 auto;background:transparent}
+.player:-webkit-full-screen .player-bg{display:block;position:absolute;left:-8%;top:-8%;width:116%;height:116%;filter:blur(28px) brightness(.7)}
+
+.familiar{text-align:center;display:flex;flex-direction:column;align-items:center;gap:26px}
+.familiar h2{max-width:20ch;font-size:clamp(32px,4.6vw,54px)}
+.familiar .lead{color:var(--mist)}
+
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,6vw,80px);align-items:center}
+.stack{display:flex;flex-direction:column;gap:18px;min-width:0}
+.stack p{color:var(--moss);font-weight:500;font-size:clamp(18px,1.8vw,21px)}
+.stack p.strong{color:var(--forest);font-weight:700}
+
+.method-head{display:flex;flex-direction:column;gap:12px;margin-bottom:40px;max-width:760px}
+.cs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.c{background:var(--white);border-radius:28px;padding:36px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.num{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px;margin-bottom:6px}
+.c:nth-child(1) .num{background:var(--sun);color:var(--forest)}
+.c:nth-child(2) .num{background:var(--rust);color:var(--white)}
+.c:nth-child(3) .num{background:var(--forest);color:var(--cream)}
+.c h3{font-size:30px}
+.c .q{font-weight:700;font-size:19px}
+.c p:last-child{color:var(--moss);font-weight:500;font-size:17px}
+.result{margin-top:22px;background:var(--rust);color:var(--white);border-radius:28px;padding:clamp(28px,4vw,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.result p{font-size:clamp(22px,2.6vw,32px);font-weight:700;line-height:1.2;max-width:28ch}
+.result .btn{background:var(--white);color:var(--forest)}
+
+.phone-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:clamp(28px,6vw,80px);align-items:center}
+.chat{background:var(--white);border-radius:32px;padding:26px;display:flex;flex-direction:column;gap:12px;box-shadow:0 30px 60px -30px rgba(31,58,43,.35)}
+.chat-top{display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1px solid #F0E2D6}
+.avatar{width:40px;height:40px;border-radius:50%;background:#E3CBB0}
+.chat-top small{display:block;color:#6E7C70;font-size:13px}
+.bub{max-width:86%;padding:13px 17px;font-size:17px;line-height:1.4}
+.me{align-self:flex-end;border-radius:22px 22px 6px 22px}
+.old{background:#ECE6DC;color:#6E7C70;text-decoration:line-through;text-decoration-color:var(--rust);text-decoration-thickness:2px}
+.new{background:var(--forest);color:var(--cream);font-weight:500}
+.him{align-self:flex-start;background:#F3EAE2;border-radius:22px 22px 22px 6px}
+
+.fit{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,56px);align-items:end}
+.fit .hand{margin-bottom:12px}
+.fit ul{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-direction:column;gap:16px}
+.fit li{display:flex;gap:16px;font-weight:500;font-size:19px}
+.fit li::before{content:"";flex-shrink:0;width:15px;height:15px;border-radius:50%;margin-top:7px;background:var(--rust)}
+.fit li:nth-child(3n+2)::before{background:var(--sun)}
+.fit li:nth-child(3n)::before{background:var(--forest)}
+.live{background:var(--forest);color:var(--cream);border-radius:28px;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:14px}
+.live .hand{color:var(--sun)}
+.live p{font-size:18px}
+.live p.soft{color:var(--mist);font-size:17px}
+
+.quotes-head{text-align:center;margin-bottom:40px}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.quote{background:var(--white);border-radius:26px;padding:32px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.quote p{font-size:19px;font-weight:500;line-height:1.5}
+.quote cite{margin-top:auto;font-style:normal;font-weight:700;color:var(--rust);font-size:16px}
+.quote.q-dark{background:var(--forest);color:var(--cream)}
+.quote.q-dark cite{color:var(--sun)}
+.quote.q-rust{background:var(--rust);color:var(--white)}
+.quote.q-rust cite{color:#FCE3B8}
+.big-quote{text-align:center;margin-top:36px;font-size:clamp(22px,2.4vw,28px);font-weight:700;line-height:1.35;max-width:36ch;margin-inline:auto}
+.big-quote cite{display:block;margin-top:8px;font-style:normal;font-size:16px;color:var(--rust)}
+
+.host{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:center}
+.host-photo{position:relative;width:min(400px,100%);justify-self:center}
+.host-photo::before{content:"";position:absolute;left:-26px;bottom:-22px;width:50%;aspect-ratio:1;border-radius:50%;background:var(--sun)}
+.host-photo img{position:relative;display:block;width:100%;height:auto;aspect-ratio:420/520;object-fit:cover;object-position:50% 0;border-radius:999px 999px 28px 28px}
+.host .stack{max-width:64ch}
+.stack p.queen{font-size:clamp(20px,2.2vw,24px);font-weight:700;line-height:1.4;color:var(--forest)}
+
+.faq{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(24px,6vw,80px);align-items:start}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+details{background:var(--white);border-radius:22px}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;font-weight:700;font-size:19px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:22px}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 28px 24px;color:var(--moss);font-weight:500}
+
+.register{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:clamp(32px,6vw,80px);align-items:center}
+.register .stack p{color:var(--cream);font-weight:500;font-size:clamp(18px,1.8vw,21px)}
+.register .stack p.meta{color:var(--mist)}
+.register h2{font-size:clamp(38px,5.4vw,64px)}
+.form-card{background:var(--sand);color:var(--forest);border-radius:30px;padding:clamp(26px,4vw,44px);display:flex;flex-direction:column;gap:16px}
+.form-card h3{font-size:30px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:15px;font-weight:700}
+.field input{height:56px;border-radius:999px;border:2px solid var(--forest);background:var(--white);padding:0 22px;font-size:16px;font-family:var(--display);color:var(--forest)}
+.err{color:var(--rust);font-size:14px;font-weight:700;min-height:1em}
+.note{font-size:15px;color:var(--moss);text-align:center;font-weight:500}
+.done h3{font-size:28px}
+.done .hand{font-size:36px}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;border-top:1px solid var(--moss);padding-block:26px;color:var(--mist);font-size:15px;margin-top:80px}
+footer a{text-decoration:none}
+
+@media (max-width:860px){
+  .hero,.split,.phone-row,.fit,.host,.faq,.register{grid-template-columns:minmax(0,1fr)}
+  .cs,.quotes{grid-template-columns:minmax(0,1fr)}
+  .photo{width:min(340px,86%)}
+  .host-photo{width:min(320px,86%)}
+  .photo::before{right:-16px;top:-16px}
+}
+/* Between phone and wide desktop the photo columns touch the gutter; pull the sun circles in so they don't spill off-screen. */
+@media (max-width:1279px){
+  .photo::before{right:-16px;top:-16px}
+  .host-photo::before{left:-16px;bottom:-16px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <nav>
+    <span class="brand">taylor bernarda</span>
+    <a class="btn" href="#register">Save my seat</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="hand">for the woman who wants to feel secure and seen in her relationship</div>
+      <h1>How to say what you actually need without starting a fight</h1>
+      <p class="lead">Learn the exact framework I teach my clients to move through a trigger in real time and come back to repair 10x faster.</p>
+      <div class="cta-row">
+        <a class="btn" href="#register">Save my free seat</a>
+        <span class="when">Free live masterclass · Mon, Nov 2 · 5:30pm PT</span>
+      </div>
+    </div>
+    <div class="photo"><img src="taylor-beach.jpg" width="900" height="1172" fetchpriority="high" alt="Taylor on the beach, hair in the wind"></div>
+  </section>
+
+  <section class="video-band">
+    <div class="hand">watch this first</div>
+    <div class="player" id="player">
+      <canvas class="player-bg" width="64" height="36" aria-hidden="true"></canvas>
+      <video src="masterclass-video.mp4" poster="video-poster.jpg" controls playsinline preload="metadata" aria-label="Video from Taylor about the masterclass"></video>
+      <button class="player-fs" type="button" aria-label="Full screen" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    </div>
+  </section>
+</div>
+
+<section class="band dark">
+  <div class="wrap familiar">
+    <div class="hand">sound familiar?</div>
+    <h2>You've done the therapy. You understand your attachment style. But the second there's conflict, you can't show up the way you know you want to.</h2>
+    <p class="lead">You feel something and think you need to say it right now. You think you're being healthy but it turns into a fight. Or you say "I'm fine," shove it down, so you're not "too much." Either way you don't feel the connection you were craving.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="stack">
+      <div class="hand">here's the thing</div>
+      <h2>You don't need more insight.</h2>
+    </div>
+    <div class="stack">
+      <p>You already know why you do it. You can't think your way out of a spiral, because the spiral lives in your body.</p>
+      <p>And you don't have a communication problem. You know exactly what you want to say, but you're too afraid to say it because you don't want to start a fight... AGAIN.</p>
+      <p class="strong">That's what we work with in this class.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <div class="method-head">
+      <div class="hand">what you'll learn</div>
+      <h2>The 3 C's Method</h2>
+      <p class="lead">The framework I teach my clients for moving through a trigger in real time.</p>
+    </div>
+    <div class="cs">
+      <div class="c"><div class="num">1</div><h3>Catch it</h3><p class="q">Is this a wound or an authentic need?</p><p>How to actually tell the difference in the moment, while you're triggered. Not three days later.</p></div>
+      <div class="c"><div class="num">2</div><h3>Calm it</h3><p class="q">Be with it in your body first</p><p>How to somatically stay with what's coming up and bring yourself back to regulation on your own, before you say a word.</p></div>
+      <div class="c"><div class="num">3</div><h3>Communicate it</h3><p class="q">Say what you need, clearly</p><p>How to communicate your need or what you're feeling without swallowing it out of fear of being too much, or exploding and starting a fight.</p></div>
+    </div>
+    <div class="result">
+      <p>So you come back to repair 10x faster, and actually get the connection and safety you've been looking for.</p>
+      <a class="btn" href="#register">Save my seat</a>
+    </div>
+  </div>
+</section>
+
+<section class="band blush">
+  <div class="wrap phone-row">
+    <div class="stack">
+      <div class="hand">what this looks like in real life</div>
+      <h2>Same trigger. Totally different night.</h2>
+      <p class="lead">He hasn't texted back in three hours. You can send the first text and spend the night fighting. Or you can feel it, come back to yourself, and say what's actually going on.</p>
+    </div>
+    <div class="chat" aria-label="Example text conversation">
+      <div class="chat-top"><div class="avatar"></div><div><strong>him</strong><small>last seen 3 hours ago</small></div></div>
+      <div class="bub me old">wow ok. guess I'll just figure it out myself like always</div>
+      <div class="bub me new">hey, I felt a little disconnected today. can we have 10 min tonight, just us?</div>
+      <div class="bub him">yes. sorry, crazy day. I miss you too</div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap fit">
+    <div>
+      <div class="hand">this is for you if</div>
+      <h2>You have your shit together everywhere except here.</h2>
+      <ul>
+        <li>You want to feel secure and seen, and stop treating every dysregulation like a reason to run.</li>
+        <li>You want to say "that hurt my feelings" without it turning into a three hour fight.</li>
+        <li>You say "I'm fine" while lowkey freaking out inside.</li>
+        <li>You've sent the three paragraph text and regretted it an hour later.</li>
+        <li>You want to stop causing fights you feel so much shame about after.</li>
+        <li>You want to feel calm, confident, and secure in your body, not just understand it as an idea.</li>
+      </ul>
+    </div>
+    <div class="live">
+      <div class="hand">what we'll do together, live</div>
+      <p>Bring one real moment where you got triggered with a partner. We'll work with it live, together, so you actually feel the shift in your body instead of just learning about it.</p>
+      <p>You'll leave knowing exactly what to do and what to say the next time it comes up.</p>
+      <p class="soft">Single, dating, married, or somewhere in between. You'll have plenty to work with.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="quotes-head">What my clients are saying</h2>
+    <div class="quotes">
+      <figure class="quote" style="margin:0"><p>"I used to suppress what I was feeling and focus on keeping everyone else comfortable. That often led to masking, resentment, burnout, or eventually reacting more strongly because I had held everything in for too long."</p><cite>-Sam</cite></figure>
+      <figure class="quote q-dark" style="margin:0"><p>"I would panic and feel a deep insecurity that made me feel everything was falling apart. I would chase him, trying to mend and repair, while he would run. Now we're able to talk through tension in a calm manner."</p><cite>-Julia</cite></figure>
+      <figure class="quote" style="margin:0"><p>"Instead of spiralling and thinking of the worst case scenario, I've been able to pause and just breathe. It stops the fight from blowing up."</p><cite>-Shana</cite></figure>
+      <figure class="quote" style="margin:0"><p>"I'm learning that I don't have to make myself smaller or keep everyone else comfortable in order to maintain a relationship. I don't need to abandon myself just to keep other people happy."</p><cite>-Laura</cite></figure>
+      <figure class="quote" style="margin:0"><p>"I know I deserve to feel safe and good in my body now, and that all parts of me deserve to be listened to and loved."</p><cite>-Jill</cite></figure>
+      <figure class="quote q-rust" style="margin:0"><p>"Things are quite peaceful in our home now. I feel heard, loved, and safe in my relationship. The transformation has been priceless."</p><cite>-Anonymous</cite></figure>
+    </div>
+    <p class="big-quote">"Saying yes could quite possibly change the entire course of your relationship."<cite>-Julia</cite></p>
+  </div>
+</section>
+
+<section class="band blush">
+  <div class="wrap host">
+    <div class="host-photo"><img src="taylor-laughing.jpg" width="900" height="1114" alt="Taylor laughing on the beach in a green top"></div>
+    <div class="stack">
+      <div class="hand">your host</div>
+      <h2>Hi, I'm Taylor.</h2>
+      <p class="queen">They call me the Trigger Queen, because I help women who've been to therapy for years and logically understand their patterns actually shift them in real time, so they can feel and show up differently.</p>
+      <p>I used to be so confused by my own reactions. I'd feel something and feel like I needed to say it right then. I thought I was being healthy, and it would always turn into a fight. Then I realized a lot of the time I was actually reacting from an old wound, a younger part of me that really needed to be tended to. I was creating more problems in my relationship, even though I had a great partner. Learning to be with my body first and listen to its language, whether it was a wound or a real need, has made a huge difference.</p>
+      <p>I'm a somatic and nervous system coach who specializes in relational dynamics, with over a decade in this work. I'm not the polished, breathy-voice kind of coach. I cuss, I'll call you out, and we'll probably go from crying to laughing in the same hour.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap faq">
+    <h2>FAQs</h2>
+    <div class="faq-list">
+      <details open><summary>Is it really free?</summary><p>Yes. Sign up so I can send you the Zoom link and a reminder.</p></details>
+      <details><summary>I've done a lot of therapy. Is this different?</summary><p>Yes. Therapy gave you the insight. This is the in-the-moment piece: what to do in your body when you're triggered, and what to say next.</p></details>
+      <details><summary>Is this for me if I'm single or dating?</summary><p>Yes. Your anxious attachment shows up with whoever you're texting, dating, or still thinking about.</p></details>
+      <details><summary>What if I'm married or in a long-term relationship?</summary><p>This is especially for you. The dishes, the boys' night, the tone he used. That's exactly what we work with.</p></details>
+      <details><summary>Do I have to be there live?</summary><p>Live is best, because we practice together and you can ask me questions. Can't make it? Sign up anyway and I'll send the replay.</p></details>
+      <details><summary>Does my partner need to come?</summary><p>No. This is your work. When you show up differently, the conversation changes.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="register" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="register">
+      <div class="stack">
+        <h2>Learn how to regulate in real time.</h2>
+        <p>Bring a real trigger. Leave knowing how to respond instead of react, so you get what you actually need without abandoning yourself to keep the peace.</p>
+        <p class="meta">Free live masterclass · Monday, November 2 · 5:30pm PT / 8:30pm ET · On Zoom</p>
+      </div>
+      <div class="form-card">
+        <form id="signup" data-kit-form-id="" novalidate style="display:flex;flex-direction:column;gap:16px">
+          <h3>Save your free seat</h3>
+          <div class="field"><label for="mc-name">First name</label><input id="mc-name" name="first_name" type="text" autocomplete="given-name" placeholder="Your first name"></div>
+          <div class="field"><label for="mc-email">Email</label><input id="mc-email" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
+          <div class="err" id="mc-err" role="alert"></div>
+          <button class="btn" type="submit">I'm in</button>
+          <p class="note">Can't make it live? Sign up anyway and I'll send the replay.</p>
+        </form>
+        <div class="done" id="done" hidden>
+          <div class="hand">you're in!</div>
+          <h3>See you Monday, Nov 2 at 5:30pm PT.</h3>
+          <p class="note" style="text-align:left">Put it in your calendar now. Your Zoom link is in your inbox (check spam and promotions too).</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <span>taylor bernarda</span>
+      <span>© 2026</span>
+    </footer>
+  </div>
+</section>
+
+<script>
+(function () {
+  var player = document.getElementById('player');
+  var video = player.querySelector('video');
+  var bg = player.querySelector('.player-bg');
+  var fsBtn = player.querySelector('.player-fs');
+  var wide = matchMedia('(min-width:861px) and (hover:hover)');
+  var ctx = bg.getContext('2d');
+  var raf = 0;
+
+  // Paint the blurred backdrop: crop the middle of the portrait frame to 16:9 and stretch it.
+  function draw(src, w, h) {
+    if (!w || !h) return;
+    var sh = Math.min(h, w * bg.height / bg.width);
+    ctx.drawImage(src, 0, (h - sh) / 2, w, sh, 0, 0, bg.width, bg.height);
+  }
+  function drawVideo() { draw(video, video.videoWidth, video.videoHeight); }
+  function loop() {
+    drawVideo();
+    raf = video.paused || video.ended ? 0 : requestAnimationFrame(loop);
+  }
+  var poster = new Image();
+  poster.onload = function () { if (!video.currentTime) draw(poster, poster.naturalWidth, poster.naturalHeight); };
+  poster.src = video.poster;
+  video.addEventListener('play', function () { if (!raf) loop(); });
+  video.addEventListener('seeked', drawVideo);
+
+  // On laptops, full screen goes to the whole frame (blur included), never the bare video.
+  var request = player.requestFullscreen || player.webkitRequestFullscreen;
+  var leave = document.exitFullscreen || document.webkitExitFullscreen;
+  function current() { return document.fullscreenElement || document.webkitFullscreenElement; }
+  function enter() { var p = request.call(player); if (p && p.catch) p.catch(function () {}); }
+  function exit() { var p = leave.call(document); return p && p.then ? p.catch(function () {}) : Promise.resolve(); }
+  function toggle() { current() === player ? exit() : enter(); }
+  function setup() {
+    var on = wide.matches && !!request;
+    fsBtn.hidden = !on;
+    if (on) video.setAttribute('controlslist', 'nofullscreen');
+    else video.removeAttribute('controlslist');
+  }
+  setup();
+  if (wide.addEventListener) wide.addEventListener('change', setup);
+  fsBtn.addEventListener('click', toggle);
+  video.addEventListener('dblclick', function (e) {
+    if (fsBtn.hidden) return;
+    e.preventDefault();
+    toggle();
+  });
+  function onChange() {
+    if (!fsBtn.hidden && current() === video) exit().then(enter);
+    fsBtn.setAttribute('aria-label', current() === player ? 'Exit full screen' : 'Full screen');
+  }
+  document.addEventListener('fullscreenchange', onChange);
+  document.addEventListener('webkitfullscreenchange', onChange);
+})();
+
+document.getElementById('signup').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var name = document.getElementById('mc-name').value.trim();
+  var email = document.getElementById('mc-email').value.trim();
+  var err = document.getElementById('mc-err');
+  if (!name) { err.textContent = 'Add your first name.'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Enter a valid email so I can send your link.'; return; }
+  err.textContent = '';
+  var form = this, btn = form.querySelector('button');
+  var showDone = function () { form.hidden = true; document.getElementById('done').hidden = false; };
+  var kitId = form.dataset.kitFormId;
+  if (!kitId) { showDone(); return; }
+  var body = new FormData();
+  body.append('email_address', email);
+  body.append('fields[first_name]', name);
+  btn.disabled = true; btn.textContent = 'Saving your seat...';
+  fetch('https://app.kit.com/forms/' + kitId + '/subscriptions', { method: 'POST', body: body, headers: { Accept: 'application/json' } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); showDone(); })
+    .catch(function () {
+      err.textContent = 'Something went wrong. Try again in a sec.';
+      btn.disabled = false; btn.textContent = "I'm in";
+    });
+});
+['mc-name','mc-email'].forEach(function (id) {
+  document.getElementById(id).addEventListener('input', function () { document.getElementById('mc-err').textContent = ''; });
+});
+</script>
+
+</body>
+</html>
