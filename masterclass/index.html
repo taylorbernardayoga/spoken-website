@@ -346,7 +346,7 @@ html{scroll-behavior:smooth}
           <div class="hp" aria-hidden="true"><label for="mc-website">Leave this empty</label><input id="mc-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
           <div class="field"><label for="mc-email">Email</label><input id="mc-email" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
           <div class="err" id="mc-err" role="alert"></div>
-          <button class="btn" type="submit">I'm in</button>
+          <button class="btn" type="submit">Ready to feel secure AF</button>
           <p class="note">Show up live for a chance at free hot seat coaching with me. Can't make it live? Sign up anyway and I'll send the replay.</p>
         </form>
         <div class="done" id="done" hidden>
@@ -450,7 +450,7 @@ document.getElementById('signup').addEventListener('submit', function (e) {
     .catch(function (e) {
       clearTimeout(timer);
       err.textContent = /email/i.test(e.message) ? 'That email didn\'t go through. Double check it?' : 'Something went wrong. Try again in a sec.';
-      btn.disabled = false; btn.textContent = "I'm in";
+      btn.disabled = false; btn.textContent = "Ready to feel secure AF";
     });
 });
 ['mc-name','mc-email'].forEach(function (id) {
