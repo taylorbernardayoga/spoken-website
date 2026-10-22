@@ -176,6 +176,11 @@ footer a{text-decoration:none}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 html{scroll-behavior:smooth}
 </style>
+<script>
+// Always open at the top: drop any #register left in a shared or refreshed URL, and skip the browser's scroll memory.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+</script>
 </head>
 <body>
 
@@ -458,5 +463,16 @@ document.getElementById('signup').addEventListener('submit', function (e) {
 });
 </script>
 
+<script>
+// Jump to the form without putting #register in the URL, so a refresh doesn't land there.
+document.querySelectorAll('a[href="#register"]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var target = document.getElementById('register');
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView();
+  });
+});
+</script>
 </body>
 </html>
