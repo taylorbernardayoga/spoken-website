@@ -117,6 +117,7 @@ nav .btn{min-height:42px;padding:0 18px;font-size:11px}
 .pricing .arrow{color:var(--accent);font-size:24px}
 .pricing b{font-family:var(--serif);font-weight:600;font-size:clamp(60px,8vw,80px);line-height:.95;letter-spacing:-0.01em}
 .plan{color:var(--muted);font-size:14px}
+.after{font-size:13px;line-height:1.5;color:var(--muted);text-align:center;margin-top:2px}
 .deal .btn{width:100%;margin-top:8px}
 
 /* ABOUT */
@@ -153,10 +154,10 @@ nav .btn{min-height:42px;padding:0 18px;font-size:11px}
 .track .shot figcaption{margin-top:auto;padding-top:12px}
 .track .shot-img img{margin:auto 0}
 .slider-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:6px}
-.arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--muted);background:transparent;color:var(--ink);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s,opacity .2s}
-.arrow:hover{background:var(--ink);color:var(--black)}
-.arrow:disabled{opacity:.3;cursor:default;background:transparent;color:var(--ink)}
-.arrow:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.slider-nav .arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--muted);background:transparent;color:var(--ink);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s,opacity .2s}
+.slider-nav .arrow:hover{background:var(--ink);color:var(--black)}
+.slider-nav .arrow:disabled{opacity:.3;cursor:default;background:transparent;color:var(--ink)}
+.slider-nav .arrow:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .dots{display:flex;gap:8px}
 .dots span{width:7px;height:7px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
 .dots.count{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--muted);min-width:64px;justify-content:center}
@@ -285,8 +286,9 @@ if (location.hash) history.replaceState(null, '', location.pathname + location.s
       <div class="deal">
         <p class="save">You save $2,500</p>
         <div class="pricing"><s aria-label="Was $5,000">$5,000</s><span class="arrow" aria-hidden="true">→</span><b>$2,500</b></div>
-        <p class="plan">Payment plans available</p>
+        <p class="plan">Payment plans available. DM me to set one up.</p>
         <a class="btn" data-link="MENTORSHIP_LINK" href="#offers">Claim your spot</a>
+        <p class="after">After checkout, you'll get a welcome email with your link to schedule. Questions? DM me anytime.</p>
       </div>
     </article>
 
@@ -318,13 +320,17 @@ if (location.hash) history.replaceState(null, '', location.pathname + location.s
         <p class="opt">60 minute sessions</p>
         <p class="save">You save $1,200</p>
         <div class="pricing"><s aria-label="Was $2,400">$2,400</s><span class="arrow" aria-hidden="true">→</span><b>$1,200</b></div>
+        <p class="plan">Payment plans available. DM me to set one up.</p>
         <a class="btn" data-link="COUPLES_60_LINK" href="#offers">Claim your spot</a>
+        <p class="after">After checkout, you'll get a welcome email with your link to schedule. Questions? DM me anytime.</p>
       </div>
       <div class="deal">
         <p class="opt">90 minute sessions</p>
         <p class="save">You save $1,800</p>
         <div class="pricing"><s aria-label="Was $3,600">$3,600</s><span class="arrow" aria-hidden="true">→</span><b>$1,800</b></div>
+        <p class="plan">Payment plans available. DM me to set one up.</p>
         <a class="btn" data-link="COUPLES_90_LINK" href="#offers">Claim your spot</a>
+        <p class="after">After checkout, you'll get a welcome email with your link to schedule. Questions? DM me anytime.</p>
       </div>
     </article>
 
@@ -355,6 +361,7 @@ if (location.hash) history.replaceState(null, '', location.pathname + location.s
         <p class="save">You save $500</p>
         <div class="pricing"><s aria-label="Was $1,000">$1,000</s><span class="arrow" aria-hidden="true">→</span><b>$500</b></div>
         <a class="btn" data-link="SESSIONS_LINK" href="#offers">Book your sessions</a>
+        <p class="after">After checkout, you'll get a welcome email with your link to schedule. Questions? DM me anytime.</p>
       </div>
     </article>
 
@@ -462,7 +469,8 @@ if (location.hash) history.replaceState(null, '', location.pathname + location.s
     <h2>FAQs</h2>
     <div class="faq-list">
       <details open><summary>How long is the sale?</summary><p>Black Friday prices end Cyber Monday, November 30 at 11:59pm Pacific.</p></details>
-      <details><summary>Do you offer payment plans?</summary><p>Yes, for the Private Mentorship. Reach out and we'll set one up.</p></details>
+      <details><summary>Do you offer payment plans?</summary><p>Yes, for the Private Mentorship and Couples Coaching. DM me on Instagram and we'll set one up.</p></details>
+      <details><summary>What happens after I buy?</summary><p>You'll get a welcome email from me with everything you need, including a link to schedule your first session. If any questions come up, DM me and I'll answer them personally.</p></details>
       <details><summary>Are sessions virtual?</summary><p id="faq-virtual"></p></details>
       <details><summary>What if I have questions first?</summary><p>DM me on Instagram with anything you're wondering about. I'll never pressure you into anything. I'm here to help you get clear on what's right for you.</p></details>
     </div>
