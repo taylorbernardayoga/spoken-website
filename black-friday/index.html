@@ -95,9 +95,10 @@ nav .btn{min-height:42px;padding:0 18px;font-size:11px}
 
 /* OFFERS */
 .offers-head{gap:16px;padding-bottom:clamp(36px,5vw,52px)}
-.offers{border:1px solid var(--line);border-top:0;padding:0 clamp(12px,3vw,24px) clamp(12px,3vw,24px);display:flex;flex-direction:column;gap:clamp(12px,3vw,24px)}
+.offers{border:1px solid var(--line);border-top:0;padding:0 clamp(12px,3vw,24px) clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:clamp(32px,6vw,56px)}
 .offer{background:var(--panel);border:1px solid var(--line);padding:clamp(28px,5vw,48px);display:flex;flex-direction:column;gap:20px;scroll-margin-top:20px}
 .offer.featured{border-color:var(--accent)}
+.offer .num{font-family:var(--serif);font-size:clamp(64px,9vw,92px);line-height:.8;color:var(--accent);font-weight:500;margin-bottom:-6px}
 .offer h3{font-size:clamp(38px,5.4vw,52px)}
 .term{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:-8px}
 .desc{color:var(--soft);font-size:clamp(17px,1.8vw,18px);max-width:60ch}
@@ -143,10 +144,18 @@ nav .btn{min-height:42px;padding:0 18px;font-size:11px}
 .tilt-l{transform:rotate(-1.4deg)}
 .tilt-r{transform:rotate(1.2deg)}
 
-.shots{display:flex;gap:18px;align-items:stretch}
-.col > .shot:last-child{flex-grow:1}
-.col{flex:1;min-width:0;display:flex;flex-direction:column;gap:18px}
-@media (max-width:640px){.shots{flex-direction:column}.col{display:contents}.shots .shot{width:100%}}
+
+.pulls{max-width:640px;margin:0 auto}
+.pull{margin:0;padding:clamp(30px,4.5vw,44px) 0;border-bottom:1px solid rgba(212,179,149,.3);text-align:center}
+.pull:first-child{padding-top:0}
+.pull blockquote{margin:0;font-family:var(--serif);font-size:clamp(22px,2.7vw,27px);line-height:1.4;color:var(--ink)}
+.pull blockquote em{color:var(--accent)}
+.pull .tag{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.pull blockquote + .tag{margin-top:20px}
+.pull figcaption{margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.real{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center;max-width:680px;margin:clamp(40px,6vw,56px) auto 0}
+.real .shot-img{box-shadow:0 18px 40px rgba(0,0,0,.55)}
+@media (max-width:640px){.real{grid-template-columns:minmax(0,1fr);gap:26px}}
 
 /* FAQ */
 .faq h2{margin:14px 0 32px}
@@ -242,7 +251,8 @@ if (location.hash) history.replaceState(null, '', location.pathname + location.s
   <div class="offers">
 
     <article class="offer featured" id="mentorship">
-      <p class="eyebrow">01 / My most exclusive offer</p>
+      <span class="num" aria-hidden="true">01</span>
+      <p class="eyebrow">My most exclusive offer</p>
       <h3>Private Somatic Mentorship</h3>
       <p class="term">6 months · 12 sessions</p>
       <p class="desc">Living in survival mode isn't who you are. It's what your nervous system learned. Imagine waking up and actually feeling calm in your body. No bracing, no spiraling, no waiting for the other shoe to drop. That's what we build together over six months of deep somatic work and rewiring the subconscious beliefs that keep you stuck: a nervous system that finally feels safe, and a version of you that gets to fully live.</p>
@@ -275,7 +285,8 @@ if (location.hash) history.replaceState(null, '', location.pathname + location.s
     </article>
 
     <article class="offer" id="couples">
-      <p class="eyebrow">02 / For couples</p>
+      <span class="num" aria-hidden="true">02</span>
+      <p class="eyebrow">For couples</p>
       <h3>Couples Coaching</h3>
       <p class="term">3 months · 6 sessions</p>
       <p class="desc">For couples who love each other and want it to feel easy again, especially when your attachment styles clash. You'll learn to talk about the hard things without it turning into a fight, and actually feel heard.</p>
@@ -312,7 +323,8 @@ if (location.hash) history.replaceState(null, '', location.pathname + location.s
     </article>
 
     <article class="offer" id="sessions">
-      <p class="eyebrow">03 / Beyond talk therapy</p>
+      <span class="num" aria-hidden="true">03</span>
+      <p class="eyebrow">Beyond talk therapy</p>
       <h3>Somatic Therapy Sessions</h3>
       <p class="term">4 sessions</p>
       <p class="desc">You've done talk therapy. You understand where your patterns come from. But you still find yourself stuck in the same places. Somatic therapy works with what talking can't reach: the old hurt and trauma your body is still holding onto.</p>
@@ -351,50 +363,36 @@ if (location.hash) history.replaceState(null, '', location.pathname + location.s
       <blockquote>"That saying yes to working with you could quite possibly <em>change the entire course of their relationship.</em> The transformation in my relationship has been priceless."</blockquote>
       <figcaption>Couples coaching client</figcaption>
     </figure>
-    <div class="shots">
-      <div class="col">
-        <figure style="order:1" class="shot">
-          <p class="q">"I feel more at peace in my body rather than feel the need to compare myself to others or what I should be doing. I feel more comfortable just being me and letting things be."</p>
-          <figcaption>S.</figcaption>
-        </figure>
-        <figure style="order:4" class="shot">
-          <p class="q">"How to move anger out of my body, or taking the time for a quick 'shake off' of body. I use to think I was being weird or was worried what people would think but now the way my body moves it, I crave it. It's huge!"</p>
-          <figcaption>J.P.</figcaption>
-        </figure>
-        <figure style="order:5" class="shot">
-          <p class="q">"We have been able to talk through times of tension in a calm manner. It's quite incredible how far we've come in such a short period."</p>
-          <figcaption>Couples coaching client</figcaption>
-        </figure>
-        <figure style="order:7" class="shot">
-          <p class="q">"I would tell them that this work will significantly change the way you move through life."</p>
-          <figcaption>J.P.</figcaption>
-        </figure>
-        <figure style="order:9" class="shot shot-img tilt-r">
-          <img src="/black-friday/testimonial-settling.png" width="775" height="430" loading="lazy" alt="Text from a client: Good morning!! I am honestly feeling so cozy in myself, idk how to describe it but after our meeting throughout the day I could just feel my body settling and it's so nice!">
-          <figcaption>Anonymous</figcaption>
-        </figure>
-      </div>
-      <div class="col">
-        <figure style="order:2" class="shot shot-img tilt-l">
+    <div class="pulls">
+      <figure class="pull">
+        <blockquote>"I feel more at peace in my body rather than feel the need to compare myself to others or what I should be doing. <em>I feel more comfortable just being me</em> and letting things be."</blockquote>
+        <figcaption>S.</figcaption>
+      </figure>
+      <figure class="pull">
+        <p class="tag">Before</p>
+        <blockquote>"I would panic and feel a deep insecurity that made me feel everything was falling apart. I would chase him trying to mend and repair while he would run and not wish to address the issue."</blockquote>
+        <p class="tag">Now</p>
+        <blockquote>"<em>I feel heard loved and safe in my relationship.</em>"</blockquote>
+        <figcaption>Couples coaching client</figcaption>
+      </figure>
+      <figure class="pull">
+        <blockquote>"I use to think I was being weird or was worried what people would think but now the way my body moves it, <em>I crave it. It's huge!</em>"</blockquote>
+        <figcaption>J.P.</figcaption>
+      </figure>
+      <figure class="pull">
+        <blockquote>"I don't stay in low funks as long like the negative behaviors or lash out behavior. It just doesn't feel as heightened or consume as much anymore, <em>it truly is so special</em> and that's how I know I gained such growth through this."</blockquote>
+        <figcaption>J.P.</figcaption>
+      </figure>
+    </div>
+    <div class="real">
+      <figure class="shot shot-img tilt-l">
           <img src="/black-friday/t-page.jpg" width="900" height="640" loading="lazy" alt="Text from a client: Taylor i just wanted to say thank you. Feel i have turned the page from improvement being my relationship with myself, to someone I enjoy being in the present. More curious with self-discovery. Improvement happens more naturally now.">
           <figcaption>Anonymous</figcaption>
         </figure>
-        <figure style="order:3" class="shot">
-          <p class="tag">Before</p>
-          <p class="q">"I would panic and feel a deep insecurity that made me feel everything was falling apart. I would chase him trying to mend and repair while he would run and not wish to address the issue."</p>
-          <p class="tag">Now</p>
-          <p class="q">"I feel heard loved and safe in my relationship."</p>
-          <figcaption>Couples coaching client</figcaption>
+      <figure class="shot shot-img tilt-r">
+          <img src="/black-friday/testimonial-settling.png" width="775" height="430" loading="lazy" alt="Text from a client: Good morning!! I am honestly feeling so cozy in myself, idk how to describe it but after our meeting throughout the day I could just feel my body settling and it's so nice!">
+          <figcaption>Anonymous</figcaption>
         </figure>
-        <figure style="order:6" class="shot">
-          <p class="q">"My relationship with my partner has been a lot better. Me being able to not spiral has helped a lot when it comes to us getting (or almost) getting into a fight. It stops it from blowing up."</p>
-          <figcaption>S.</figcaption>
-        </figure>
-        <figure style="order:8" class="shot">
-          <p class="q">"I don't stay in low funks as long like the negative behaviors or lash out behavior. It just doesn't feel as heightened or consume as much anymore, it truly is so special and that's how I know I gained such growth through this."</p>
-          <figcaption>J.P.</figcaption>
-        </figure>
-      </div>
     </div>
   </section>
 
@@ -432,43 +430,6 @@ if (location.hash) history.replaceState(null, '', location.pathname + location.s
       <a class="btn" href="#mentorship" data-scroll>Mentorship</a>
       <a class="btn ghost" href="#couples" data-scroll>Couples Coaching</a>
       <a class="btn ghost" href="#sessions" data-scroll>Somatic Sessions</a>
-    </div>
-  </section>
-
-  <section class="panel words more" id="more-words">
-    <div class="words-head">
-      <p class="eyebrow">Still deciding?</p>
-      <h2>More of what my clients <em>are saying.</em></h2>
-    </div>
-    <div class="shots">
-      <div class="col">
-        <figure style="order:1" class="shot">
-          <p class="q">"I've learned that my thoughts are not facts, and that the mind naturally wants to stay with what feels familiar and comfortable. I can see now how that pattern kept me stuck for so many years."</p>
-          <figcaption>Sam</figcaption>
-        </figure>
-        <figure style="order:2" class="shot">
-          <p class="q">"I used to suppress what I was feeling, focus on keeping everyone else comfortable, and avoid expressing myself in the moment. That often led to masking, resentment, burnout, or eventually reacting more strongly because I had held everything in for too long."</p>
-          <figcaption>Sam</figcaption>
-        </figure>
-        <figure style="order:6" class="shot">
-          <p class="q">"I was not confident in myself but I went through with it anyway, and even after the first session or meeting with you I had a big sense of relief or optimism and hope."</p>
-          <figcaption>S.</figcaption>
-        </figure>
-      </div>
-      <div class="col">
-        <figure style="order:3" class="shot">
-          <p class="q">"Now I'm learning that putting myself first isn't selfish. I can care about other people while still honoring my own needs, energy, and capacity."</p>
-          <figcaption>Sam</figcaption>
-        </figure>
-        <figure style="order:4" class="shot shot-img tilt-r">
-          <img src="/black-friday/t-dance.jpg" width="850" height="776" loading="lazy" alt="Text from a client: Thank youuuu. Broke a little cycle this morning. I woke up feeling like utter garbage. Just had weird dreams and slept bad cuz the wind. I was like ready to be in a bad mood the rest of the day and then I stopped myself and said NOPE. Listened to a song that makes me happy and had a little dance party to shake out the grumps. Now it's a better day">
-          <figcaption>Anonymous</figcaption>
-        </figure>
-        <figure style="order:5" class="shot">
-          <p class="q">"Being able to move those feelings out with somatics and identifying that part of me has been POWERFUL!"</p>
-          <figcaption>J.P.</figcaption>
-        </figure>
-      </div>
     </div>
   </section>
 
